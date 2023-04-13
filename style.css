@@ -164,6 +164,10 @@ footer {
                     margin-block-start: 1rem;
                 }
 
+                #range {
+                    margin-block: 1rem;
+                }
+
             #left {
                 border-radius: 1rem;
                 top: 100%;
