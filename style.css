@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--very-dark-blue);
+    background-image: url(./images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+    background-position: 0 100%;
+    font-family: Raleway, sans-serif;
+    display: grid;
+    place-items: center;
+}
+
+main {
+    width: 90%;
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: 30% calc(70% - 1rem);
+    gap: 1rem;
+    position: relative;
+}
+    #brand, #usage {
+        padding: 2rem;
+        background-color: var(--dark-blue);
+        border-radius: 1rem;
+    }
+
+    #brand {
+        border-radius: 1rem 5rem 1rem 1rem;
+    }
+        #icons {
+            display: flex;
+            margin-block-start: 2rem;
+        }
+            #icons div {
+                padding: 1rem;
+                background-color: var(--very-dark-blue);
+                width: 1.5rem;
+                aspect-ratio: 1;
+                display: grid;
+                place-items: center;
+                margin-left: 1rem;
+                border-radius: 0.5rem;
+                cursor: pointer;
+            }
+                #icons div:first-child {
+                    margin-left: 0;
+                }
+
+                #icons div img {
+                    width: 100%;
+                    transition: 0.5s;
+                }
+
+                #icons div:hover img {
+                    filter: brightness(2)
+                }
+    #usage {
+        align-self: end;
+        height: calc(75% - 4rem);
+        color: var(--pale-blue);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+        #usage p {
+            margin-block: 0;
+        }
+        #usage span {
+            font-weight: 700;
+        }
+
+        #used {
+            position: relative;
+            width: 100%;
+            height: 1rem;
+            border-radius: 1rem;
+            background-color: var(--very-dark-blue);
+        }
+            #used::before {
+                display: block;
+                content: '';
+                width: 81.5%;
+                height: 100%;
+                background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+                border-radius: 1rem;
+            }
+
+            #used::after {
+                position: absolute;
+                top: 0;
+                left: 81.5%;
+                display: block;
+                content: '';
+                width: 1rem;
+                height: 100%;
+                background: white;
+                border-radius: 50%;
+                transform: translate(-100%);
+            }
+        #range {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    #left {
+        position: absolute;
+        top: 0;
+        right: 2rem;
+        background-color: white;
+        border-radius: 1rem 1rem 0 1rem;
+        display: flex;
+        align-items: center;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--grayish-blue);
+        font-size: 1rem;
+    }
+        #left h1 {
+            margin-right: 0.5rem;
+            margin-block: 0;
+            color: var(--very-dark-blue)
+        }
+
+        #left::after {
+            content: '';
+            position: absolute;
+            border: solid white 0.5rem;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            top: 100%;
+            right: 0;
+        }
+
+footer {
+    position: fixed;
+    bottom: 1vh;
+}
+
+@media screen and (max-aspect-ratio: 1) {
+    body {
+        background-image: url(./images/bg-mobile.png);
+        background-size: cover;
+    }
+
+        main {
+            grid-template-columns: auto;
+        }
+            #usage {
+                height: unset;
+                text-align: center;
+            }
+                #usage div {
+                    margin-block-start: 1rem;
+                }
+
+            #left {
+                border-radius: 1rem;
+                top: 100%;
+                right: 50%;
+                transform: translate(50%, -50%);
+            }
+
+            #left::after {
+                display: none;
+            }
+}

@@ -5,16 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Huy Phan | Fylo data storage component</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
-  You’ve used 815 GB of your storage
-
-  185 GB Left
-  
-  0 GB
-  1000 GB
-  
+  <main>
+    <div id="brand">
+      <img src="./images/logo.svg" alt="Logo">
+      <div id="icons">
+        <div><img src="./images/icon-document.svg" alt="Document"></div>
+        <div><img src="./images/icon-folder.svg" alt="Folder"></div>
+        <div><img src="./images/icon-upload.svg" alt="Upload"></div>
+      </div>
+    </div>
+    <div id="usage">
+      <p>You’ve used <span>815 GB</span> of your storage</p>
+      <div id="used"></div>
+      <div id="range">
+        <span>0 GB</span>
+        <span>1000 GB </span>
+      </div>
+    </div>
+    <div id="left">
+      <h1>185</h1> GB Left
+    </div>
+  </main>  
   <footer>
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/huyphan2210" target="_blank">Huy Phan</a>.
